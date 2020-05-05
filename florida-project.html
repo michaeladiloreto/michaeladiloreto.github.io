@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -10,35 +11,69 @@
     body {
         padding: 0;
         margin: 10;
-        background: whitesmoke;
+        background: white;
     }
-    h1, h2 {
+    
+    h1, h2, h3, h4 {
         position: fixed;
-        left: 20px;
-        top: 10px;
+        left: 40px;
+        top: 0px;
         font-family: "Proxima Nova", Montserrat, sans-serif;
-        font-size: 1.3em;
+        font-size: 1.5em;
         font-weight: 100;
-        color: #706f72;
+        color: #000;
     }
     h2 {
         top: 40px;
         font-size: 1em;
+        
     }
+    
+    h3 { 
+    top: 60px;
+    font-size: .95em;
+    }
+       
+    
+    h4 {
+    position: fixed;
+    left: 40px;
+    top: 320px;
+    font-family: "Proxima Nova", Montserrat, sans-serif;
+    font-size: .8em;
+    color: #000;
+        
+    
+    }
+    
     .county {
       stroke: #fff;
-      fill: #706f72;
-        fill-opacity: .7;
+      fill: #4195d3;
+    
     }
     .hover {
         fill: #f9db35;   
         fill-opacity: .7;
     }
+    
 </style>
 </head>
 <body>
-    <h1>Who Is My Lexia&reg Account Executive?</h1>
-    <h2></h2>
+    <h1>Your Lexia&reg Learning Florida Team</h1>
+    <h2>Hover over your county to find your Lexia&reg Account Executive!</h2>
+    <h3></h3>
+    <h4>CHERYL MCLAUGHLIN
+    <br>cmclaughlin@lexialearning.com
+    <br>404-623-5091
+    <br><br>
+    <br>LAZ GARCIA
+    <br>laz@lexialearning.com
+    <br>954-687-3997
+    <br><br>
+    <br>ROBIN SUTER
+    <br>rsuter@lexialearning.com
+    <br>404-227-1878</h4>
+    
   <script>
         
     var width = 1000,
@@ -66,15 +101,18 @@
         .attr( "d", geoPath )
         .attr("class","county")
         .on("mouseover", function(d){
-            d3.select("h2").text(d.properties.NAME);
+            d3.select("h3").text(d.properties.NAME);
             d3.select(this).attr("class","county hover");
         })
         .on("mouseout", function(d){
-            d3.select("h2").text("");
+            d3.select("h3").text("");
             d3.select(this).attr("class","county");
+        
+        
+        
         });
  
   </script>
-    
+
 </body>
 </html>
