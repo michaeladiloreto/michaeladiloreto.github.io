@@ -11,6 +11,7 @@
 <style>
 .counties {
   fill: none;
+    
 }
 .states {
   fill: none;
@@ -29,6 +30,7 @@ font-family: 'Cormorant Garamond', serif;
     
 
 </style>
+<body> 
     <h1>Incidents of Anti-Semitism Across the United States in 2014</h1>
 <svg width="960" height="600"></svg>
 
@@ -44,7 +46,7 @@ var unemployment = d3.map();
 
 var x = d3.scaleLinear()
     .domain([0, 9])
-    .rangeRound([0, 250]);
+    .rangeRound([0, 300]);
 
 var color = d3.scaleThreshold()
     .domain(d3.range(0, 9))
@@ -53,7 +55,7 @@ var color = d3.scaleThreshold()
 // Create element for legend
 var g = svg.append("g")
     .attr("class", "key")
-    .attr("transform", "translate(620, 40)");
+    .attr("transform", "translate(575, 40)");
 
 // Legend color scale
 g.selectAll("rect")
@@ -82,7 +84,30 @@ g.append("text")
 // Legend markings - 2%, 3%, etc.
 g.call(d3.axisBottom(x)
     .tickSize(11)
-    .tickFormat(function(x, i) { return i ? x : x + "+";})
+    .tickFormat(function(x, i) { if(i==0)
+    return "0"
+    if(i==1)
+    return "1"
+    if(i==2)
+        return "2"
+    if(i==3)
+        return "3"
+if(i==4)
+        return "4"
+if(i==5)
+        return "5"
+ if(i==6)
+        return "6"
+ if(i==7)
+        return "7"
+if(i==8)
+        return "8+"
+                              
+                            
+
+                                
+                                
+                                ;})
     .tickValues(color.domain()))
   .select(".domain")
     .remove();
@@ -115,4 +140,6 @@ function ready(error, us) {
       .attr("class", "states")
       .attr("d", path);
 }
-    </script></html>
+    </script>
+    </body>   
+</html>
