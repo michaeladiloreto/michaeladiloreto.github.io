@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
      <head>
-    <title>Antisemitism in the USA</title>
+    <title>Anti-Semitism Across the USA - 2014 </title>
      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Lora&family=Yeseva+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -26,6 +26,15 @@
          font-family: 'Yeseva One', cursive;
 font-family: 'Lora', serif;
 font-family: 'Cormorant Garamond', serif;
+    }
+    
+    p {
+        margin-left: 50px;
+        font-size: 16px;
+        font-family: 'Yeseva One', cursive;
+font-family: 'Lora', serif;
+font-family: 'Cormorant Garamond', serif;
+        margin-bottom: auto
     }
     
 
@@ -85,15 +94,15 @@ g.append("text")
 g.call(d3.axisBottom(x)
     .tickSize(11)
     .tickFormat(function(x, i) { if(i==0)
-    return "0"
+    return "   0"
     if(i==1)
-    return "1"
+    return "   1"
     if(i==2)
-        return "2"
+        return "   2"
     if(i==3)
-        return "3"
+        return "   3"
 if(i==4)
-        return "4"
+        return "   4"
 if(i==5)
         return "5"
  if(i==6)
@@ -141,5 +150,7 @@ function ready(error, us) {
       .attr("d", path);
 }
     </script>
+    
+    <p>Data taken from <a href="https://www.adl.org/sites/default/files/documents/assets/pdf/anti-semitism/united-states/state-by-state-data-2014.pdf"> Anti-Defamation League 2014 Audit of Anti-Semitic Incidents State-By-State. </a> </p>
     </body>   
 </html>
